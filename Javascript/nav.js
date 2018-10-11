@@ -2,6 +2,7 @@
 let mainNav= document.getElementById('main-nav');
 let navbarToggle= document.getElementById('navbar-toggle');
 
+
 navbarToggle.addEventListener('click',function(){
 
     if(this.classList.contains('active')){
@@ -14,6 +15,8 @@ navbarToggle.addEventListener('click',function(){
 
     }
 });
+
+
 if (screen.width < 991) {
 
     mainNav.addEventListener('click',function (event) {
@@ -22,4 +25,9 @@ if (screen.width < 991) {
         navbarToggle.classList.remove('active');
 
     });
+
+    document.onscroll = function(){
+        mainNav.style.display="none";
+        navbarToggle.classList.remove('active');
+    };
 }
